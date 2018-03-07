@@ -1,0 +1,13 @@
+.fancy-header {
+    color: rebeccapurple;
+    text-decoration: underline;
+}
+h1 { text-align: center; }
+
+h2 {text-decoration: underline;color: purple}
+
+h3{text-decoration: underline;color: darkred}
+
+h1, h5, h4 { text-decoration: underline;color: green }
+
+body { background-color: grey; }
