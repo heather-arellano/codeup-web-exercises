@@ -1,0 +1,41 @@
+.boxes{
+    border: 1px solid black;
+    width: 150px;
+    height: 50px;
+    padding:10px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 10px;
+}
+header {
+    color: rebeccapurple;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#red {
+    background-color: red
+}
+
+#orange {background-color:orange;
+        margin-left: 30px;
+
+}
+
+#yellow{background-color: yellow;
+    margin-left: 60px
+ }
+
+#green{background-color: green;
+    margin-left: 90px
+}
+
+#blue {background-color: blue;
+    margin-left: 120px
+}
+
+#pink {background-color: hotpink;
+        margin-left: 150px
+    }
+
+}div
