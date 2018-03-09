@@ -1,0 +1,32 @@
+
+body{text-align: center;
+    padding: 8px;}
+
+
+
+img{align-content: center;
+    width:230px;}
+
+
+.nav-links{margin-left: -50px}
+
+li {
+    height: 3em;
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+    background-color: gray;
+    margin: 1em;}
+ul{margin-right: 25px}
+
+.hidden-on-desktop{background-color: cyan;
+   align-content: center;}
+.main{align-content: center;
+
+    }
+
+
+.subsection{align-content: center ;
+    }
+
+
