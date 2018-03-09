@@ -1,0 +1,31 @@
+header {background-color: blanchedalmond;
+    width: 1024px;
+    margin: auto;
+
+}
+
+
+c.container {
+    width: 1023px;
+    margin: 0 auto;
+overflow: auto;
+border: 1px solid red;}
+
+
+
+
+aside {background-color: lightpink;
+        float: left;
+    width: 204px;
+    margin: auto;
+
+
+}
+
+
+main {
+    background-color: cornflowerblue;
+    float: left;
+    width: 880px;
+    margin: ;
+}
