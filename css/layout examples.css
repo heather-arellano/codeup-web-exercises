@@ -13,11 +13,10 @@ border: 1px solid red;}
 
 
 
-
 aside {background-color: lightpink;
         float: left;
-    width: 204px;
-    margin: auto;
+    width: 20%;
+   ;
 
 
 }
@@ -26,6 +25,22 @@ aside {background-color: lightpink;
 main {
     background-color: cornflowerblue;
     float: left;
-    width: 880px;
-    margin: ;
+    width: 80%;}
+
+@media screen and (min-width:768px) {aside, main {
+    width: 25%} }
+
+@media screen and (min-width:1200px) {
+    aside, main {
+        width: 50%
+    }
+.google{display: none;}
 }
+
+@media screen and (min-width:992px) {
+    aside, main {
+        width: 50%
+    }
+}
+
+

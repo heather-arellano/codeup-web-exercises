@@ -49,4 +49,4 @@ header {
     top: 0px;
     right: 0px;}
 
-.boxes:nth-child(6){ clear: left }
+.boxes:nth-child(3), .boxes:nth-child(6), .boxes:nth-child(6){ clear: left }
