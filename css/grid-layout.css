@@ -1,0 +1,45 @@
+
+.container {
+    overflow: auto;
+    margin: 10px 0;
+    background-color: white;
+}
+
+.col {
+    border: 1px solid black;
+    float: left;
+    box-sizing: border-box;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.row {
+    margin: 10px 0;
+    overflow: auto;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.one-half {
+    width: 50%;
+}
+
+.two-third {
+    width: 33.33%;
+}
+
+.one-fourth {
+    width: 25%;
+}
+
+.one-eighth {
+    width: 12.5%;
+}
+
+.lastrow {
+    margin-top: 40px;
+}
