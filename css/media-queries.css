@@ -15,7 +15,7 @@ h1 {
 
 img {
     align-content: center;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .nav-links {
@@ -27,12 +27,12 @@ img {
     list-style-type: none;
     text-align: center;
     margin-bottom: .5em;
-    background-color: gray;
+    /*background-color: gray;*/
 }
 
 .alert-info {
-    background-color: cyan;
-    border: 2px black solid;
+    /*background-color: cyan;*/
+    /*border: 2px black solid;*/
     text-align: center;
     padding: 8px;
     text-decoration-color: black;
@@ -68,11 +68,11 @@ footer > p {
 }
 
 .icon {
-    width: 25px;
+    /*width: 25px;*/
     height: 25px
 }
 
-@media screen and (min-width: 768px) {
+/*@media screen and (min-width: 768px) {*/
 
     .hidden-on-desktop {
         display: none;
@@ -94,21 +94,21 @@ footer > p {
         padding: .5em;
         line-height: 3em;
         display: inline;
-        background-color: transparent;
+        /*background-color: transparent;*/
     }
 
     .main {
         padding-top: 1em;
         clear: left;
         float: left;
-        width: 66%;
+        /*width: 66%;*/
     }
 
     .sub-section {
         padding-top: 1em;
         float: left;
         clear: left;
-        width: 33%;
+        /*width: 33%;*/
 
     }
 
