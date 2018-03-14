@@ -1,69 +1,184 @@
 <!doctype html5>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Order-Pizza</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <!-- Your custom styles go here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/order-pizza.css"><!-- Your custom styles go here -->
 </head>
 <body>
 <header>
     <!-- Grey with black text -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">Pizza world</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Order online <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
+                    <a class="nav-link" href="#">Menu</a>
             </ul>
+
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="search" placeholder="Zipcode" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you!</button>
             </form>
-            <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+
         </div>
+
 </header>
 <!-- Main page content -->
-<div class="container">
-    <div class="jumbotron">
-        <h1>Welcome to Pizza World!</h1>
-        <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.</p>
-    </div>
-    <p>This is some text.</p>
-    <p>This is another text.</p>
 </div>
-<div>
-<h2>Build your own pizza!</h2>
+<div class="container" style="width: 100%;">
+    <div class="jumbotron jumbotron-fluid">
+        <h1>Welcome to Pizza World!</h1>
+</div>
 
-        <ul class = "nav nav-pills">
-            <li class = "active"><a href = "#">Home <span class ="badge">42</span></a></li>
-            <li><a href = "#">Profile</a></li>
-            <li><a href = "#">Messages <span class = "badge">3</span></a></li>
+<h2>Build your own pizza!</h2>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" href="#"><span class="badge badge-pill badge-dark">1</span>Size and Crust</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="#"><span class="badge badge-pill badge-dark">2</span>Cheese and Sauce</a>
+    </li>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="#"><span class="badge badge-pill badge-dark">3</span>Toppings</a>
+    </li>
+    </li>
+</ul>
+
+<div class="card-bodyouter" style="width: 100%;">
+    <h3 class="card-title">Choose size and crust</h3>
+
+    <div class="card-body">
+        <h4 class="card-header card-title">Handtossed</h4>
+        <p class="card-text" style="padding:4px ;">Garlic-seasoned crust with a rich buttery taste.</p>
+        <ul class="input-group"></ul>
+        <li class="list-group-item"><input type="radio" name="crust" value="crust">
+        <label for crust>Small (10")</label></li>
+        <li class="list-group-item"><input type="radio" name="crust" value="crust">
+            <label for crust>Medium (12")</label></li>
+
         </ul>
 
+    </div>
 
+    <div class="card-body">
+        <h4 class="card-header card-title">Crunchy thin crust</h4>
+        <p class="card-text" style="padding:4px ;">Thin enough for the optimum crispy to crunchy ratio</p>
+        <ul class="input-group"></ul>
+        <li class="list-group-item"><input type="radio" name="crust" value="crust">
+            <label for crust>Medium (12")</label></li>
+        <li class="list-group-item"><input type="radio" name="crust" value="crust">
+            <label for crust>Large (14")</label></li>
 
+        </ul>
 
-
+    </div>
+    <div class="card-footer">
+        <div class="card-footer">
+            <button class="btn btn-theme" style="float:right" type="button" id="toright">Next Step></button>
+        </div>
+    </div>
 </div>
+<div class="card-bodyouter" style="width: 100%;">
+    <h3 class="card-title">Choose cheese & sauce</h3>
+    <div class="card-body">
+        <h4 class="card-header card-title">Cheese?</h4>
+        <form class="form-group">
+            <br>
+            <label for="sel1">How much?:</label>
+            <select class="form-control" id="sel1">
+                <option>Light</option>
+                <option>Normal</option>
+                <option>Extra</option>
+                <option>Double</option>
+            </select>
+        </form>
+    </div>
+
+    <div class="card-body">
+        <h4 class="card-header card-title">Sauce</h4>
+        <br>
+        <form class="form-group">
+        <label for="sel1">What type?</label>
+        <select class="form-control" id="sel1">
+            <option>Tomato sauce</option>
+            <option>Marinara Sauce</option>
+            <option>BBQ Sauce</option>
+            <option>Alfredo Sauce</option>
+        </select>
+            <br>
+            <form class="form-group">
+                <label for="sel1">How much?</label>
+                <select class="form-control" id="sel1">
+                    <option>Light</option>
+                    <option>Normal</option>
+                    <option>Extra</option>
+                </select>
+    </div>
+
+    <div class="card-footer">
+        <button class="btn btn-theme" ; style="float:right" type="button" id="toright"> < Previous Step</button>
+        <button class="btn btn-theme" ; style="float:right" type="button" id="toright">Next Step></button>
+    </div>
+    <div class="card-bodyouter" style="width: 100%;">
+        <h3 class="card-title">Choose Toppings</h3>
+        <div class="card-body">
+            <h4 class="card-header card-title">Choose meats</h4>
+            <div class="checkbox pull-left">
+                <label><input type="checkbox" value="">Beef</label>
+            </div>
+            <div class="checkbox pull-left">
+                <label><input type="checkbox" value="">Ham</label>
+            </div>
+            <div class="checkbox pull-left">
+                <label><input type="checkbox" value="" disabled>Philly Steak</label>
+                <div class="checkbox pull-left">
+                    <label><input type="checkbox" value="" disabled>Bacon</label>
+                </div>
+            </div>
+            <h4 class="card-header card-title">Choose non-meats</h4>
+            <div class="checkbox pull-left">
+                <label><input type="checkbox" value="">Green Peppers</label>
+            </div>
+            <div class="checkbox pull-left">
+                <label><input type="checkbox" value="">Mushrooms</label>
+            </div>
+            <div class="checkbox pull-left">
+                <label><input type="checkbox" value="" disabled>Onions</label>
+                <div class="checkbox pull-left">
+                    <label><input type="checkbox" value="" disabled>Jalepeno Peppers</label>
+                </div>
+
+                <div class="card-footer" style="width: fit-content;">
+                    <button class="btn btn-theme" style="float:right" type="button" id="toright">Check Out></button>
+
+                </div>
+            </div>
+        </div>
 
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<!-- Your custom JS goes here -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+            <!-- Your custom JS goes here -->
 </body>
 </html>

@@ -1,0 +1,35 @@
+.jumbotron {
+    background-image: url("../images/pizza.png");
+
+}
+
+h1 {
+    text-align: center;
+    background-color: white;
+    opacity: .6;
+}
+
+.card-body-outer {
+    border-color: solid lightskyblue;
+}
+
+.navbarTogglerDemo0 {
+    color: black;
+}
+
+h3 {
+    background-color: lightskyblue;
+}
+
+.sel1 {
+    background-color: lightskyblue;
+
+}
+
+.list-group-item {
+    background-color: lightskyblue;
+}
+
+.checkbox {
+    background-color: lightskyblue;
+}
