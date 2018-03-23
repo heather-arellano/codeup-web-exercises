@@ -1,34 +1,32 @@
- var pickNumber = confirm("Would you like to pick a number?");
-    if (pickNumber) {
-    var userNum;
-    userNum = prompt("Please pick a number");
+'use strict';
 
-     if (!isNaN(userNum) ){
+    function isOdd(pickNum) {
+        return pickNum % 2 !== 0;
+    }
+    function isNumeric(num) {
+        return !isNaN(parseFloat(num));
+    }
 
-         if (isEven(userNum)) {
-             alert("Your number is even");
-         } else {
-             alert("Your number is odd");
-         }
 
-         if(isPositive(userNum)){
-             alert("Your number is positive");
-         } else {
-             alert("Your number is negative")
-         }
 
-         alert("Your number is "+ plusHundred(userNum));
-     }
- }
 
- function isEven(number) {
-     return(number%2===0);
-}
+var pickNum
+do {
+    pickNum = parseFloat(prompt('Pick an odd number between 1 & 50'));
+    if(isOdd(pickNum)) {
+        break;
+        }
+    } while(true);
+console.log("I am skipping this " + pickNum)
 
- function plusHundred(number){
-     return (parseInt(number) + 100);
- }
 
- function isPositive(number){
-    return (number > 0);
+for (var i = 1; i < 50; i++) {
+
+    if (i == pickNum) {
+        console.log( 'I just skipped ' + i);
+        continue;
+    }
+    if (isOdd(i)) {
+        console.log('Here is an odd :  ' + i);
+    }
 }
