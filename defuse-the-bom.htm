@@ -32,8 +32,13 @@
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
+     setTimeout(function() {
+         alert('Keep Calm & Carry On');
+     }, 3000);
 
-    }
+
+        }
+     var stopTimer= clearTimeout(defuseTheBOM(countDown),);
 
     // Don't modify anything below this line!
     //
