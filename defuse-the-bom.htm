@@ -19,26 +19,24 @@
     function updateTimer() {
         if (detonationTimer == 0) {
             alert('EXTERMINATE!');
+            // defuseTheBOM();
             document.body.innerHTML = '';
         } else if (detonationTimer > 0) {
+            console.log("running");
             document.getElementById('timer').innerHTML = detonationTimer;
         }
-
         detonationTimer--;
     }
 
-    var countDown = setInterval(updateTimer(), 1000);
+    var countDown = setInterval(updateTimer, 1000);
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-     setTimeout(function() {
-         alert('Keep Calm & Carry On');
-     }, 3000);
+        clearInterval(countDown);
+    }
 
-
-        }
-     var stopTimer= clearTimeout(defuseTheBOM(countDown),);
+     // var stopTimer= clearTimeout(defuseTheBOM(countDown));
 
     // Don't modify anything below this line!
     //
