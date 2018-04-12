@@ -36,3 +36,14 @@ table, tr, td, th {
 body:hover {
     color: bisque
 }
+.flex-container {
+    display: flex;
+    background-color: skyblue;
+}
+
+.flex-container > div {
+    background-color: bisque;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
