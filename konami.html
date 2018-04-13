@@ -2,17 +2,87 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <style>
+        body {
+            background-color: bisque ;
+        }
+#winner{
+    display: none;
+}
+
+ img{
+     width: 300px;
+     height: 300px;
+     align-content: center;
+ }
+    </style>
 </head>
 <body>
 <h1>Konami Code</h1>
-
-<script src="/js/jquery.js"></script>
+<div>
+<div id="winner"><img src="images/winnerU.jpeg" alt=""></div>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
 <script>
     "use strict";
 
-    $(document).keyup(function(event){
-        console.log(event.keyCode);
+    $(document).keydown(function (event) {
+        // console.log(event.keyCode);
     });
+    var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'enter'];
+
+    var validKeys = {
+        e: 'up',
+        c: 'down',
+        s: 'left',
+        f: 'right',
+        a: 'a',
+        b: 'b',
+        z: 'enter'
+    };
+    var position = 0;
+
+    function activate () {
+        alert('You have 30 more lives!');
+        var audio = new Audio();
+        audio.src = "http://www.wavsource.com/snds_2018-01-14_3453803176249356/sfx/applause_y.wav";
+        audio.play();
+        $('#winner').fadeIn(2500);
+    }
+
+
+        $('body').keydown(function (e) {
+            console.log(e.key);
+            var keys = validKeys[e.key];
+
+            var requiredKey = konamiCode[position];
+
+            if (keys === requiredKey) {
+                console.log("key is: " + keys + "vs required: " + requiredKey)
+                position++;
+                console.log(alert);
+                if (position === konamiCode.length) {
+                    activate();
+                    position = 0;
+
+                }
+
+            } else {
+                position = 0;
+            }
+        });
+
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>
