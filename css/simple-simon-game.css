@@ -1,0 +1,62 @@
+.square{
+    background-color: black;
+
+}
+
+.boxes{
+
+    height: 215px;
+
+    margin:2%;
+
+    opacity: .5;
+
+}
+
+#upper-left{
+
+    margin-top: 4%;
+
+    border-top-left-radius: 90%;
+
+    background-color: dodgerblue;
+
+}
+
+#upper-right{
+
+    margin-top: 4%;
+
+    border-top-right-radius: 90%;
+
+    background-color: red;
+
+}
+
+#bottom-left{
+
+    border-bottom-left-radius:90%;
+
+    background-color: purple;
+
+}
+
+#bottom-right{
+
+    border-bottom-right-radius: 90%;
+
+    background-color: #3c763d;
+
+}
+
+.boxes:hover{
+
+    opacity: .65;
+
+}
+
+.boxes:active{
+
+    opacity: 1;
+
+}

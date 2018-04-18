@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>google-maps-api</title>
+    <style>
+        mapCanvas{
+            height: 500px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+<div id="mapCanvas"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHfRSB_Ec4X_609YUqpf9Cc4Bg3VgmRUw"></script>
+
+<script>
+
+    mapOptions={
+        zoom:15,
+        center:{
+            lat:29.426791,
+            lng: -98.489602
+        },
+        mapTypeId: google.maps.MapTypeId.SATELLITE
+    }
+    //creating a map and passing it to a div
+    var mapCanvas= document.getElementById("mapCanvas");
+    var map= new google.maps.Map(mapCanvas,mapOptions);
+    //creating a geocode
+    var geocoder= new google.maps.Geocoder();
+    //creating a address
+    var address={
+        address:"4400 Rittiman Rd San Antonio, TX 78218"
+    };
+    //creating a callback function
+    function callback(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+
+            map.setCenter(results[0].geometry.location);
+            var marker=new google.maps.Marker({
+                position: results[0].geometry.location,
+                map:map
+            });
+            var info= new google.maps.InfoWindow({
+                content:'this is the <strong>info</strong><br> my favorite restaurant'
+            });
+            info.open(map,marker);
+        }
+        else {
+
+            alert("Geocoding was not successful - STATUS: " + status);
+        }
+    }
+    geocoder.geocode(address,callback);
+</script>
+
+</body>
+</html>

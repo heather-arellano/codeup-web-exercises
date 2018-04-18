@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>jquery_faq</title>
@@ -8,8 +8,7 @@
     <style type="text/css">
         body {
             background-color: aquamarine;
-            backbround
-            font-family: "Trebuchet MS", Verdana;
+            backbround font-family: "Trebuchet MS", Verdana;
         }
 
         .invisible {
@@ -49,10 +48,12 @@
         <dt>Where is Kalaupapa National Historical Park?</dt>
         <dd class='invisible'>The park is on the north shore of the island of Molokai, Hawaii, in Kalawao County</dd>
         <dt>What is weather like during the different seasons?</dt>
-        <dd class='invisible'>Hawaii enjoys warm temperatures year-round, although site conditions at the park can vary depending
-        on weather and time of year.
-        The rainy season is in the winter with the more hot and humid days in the summer. Trade winds are fairly
-        constant and typically blow from the northeast.</dd>
+        <dd class='invisible'>Hawaii enjoys warm temperatures year-round, although site conditions at the park can vary
+            depending
+            on weather and time of year.
+            The rainy season is in the winter with the more hot and humid days in the summer. Trade winds are fairly
+            constant and typically blow from the northeast.
+        </dd>
         <dt>What is the physical address?</dt>
         <dd class='invisible'>P.O. Box 2222 Kalaupapa , HI 96742</dd>
         <dt>Do you need a permit to visit Kalaupapa?</dt>
@@ -68,16 +69,65 @@
     </dl>
 
 
+    <h3 id="national-parks-heading">National Parks</h3>
+    <ul id="national-parks">
+        <li>Fact A</li>
+        <li>Fact B</li>
+        <li>Fact C</li>
+        <li>Fact D</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Fact A</li>
+        <li>Fact B</li>
+        <li>Fact C</li>
+        <li>Fact D</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Fact A</li>
+        <li>Fact B</li>
+        <li>Fact C</li>
+        <li>Fact D</li>
+    </ul>
+
+    <button id="yellow"> Go yellow</button>
+
+
 </main>
 
 <script>
-    'use strict'
-    $('button').click(function () { .
-        toggleClass('invisible');
+    'use strict';
+
+    // $('.invisible').css({
+    //     'display': 'none'});
+
+    //
+    // $('button').click(function () { .
+    //     toggleClass('invisible');
+    // });
+
+    $("#yellow").click(function () {
+        $('ul').each(function () {
+            $(this).children().last().css('background-color', 'yellow')
+        })
     });
+
+    $('h3').on('click', function () {
+        $(this).next().children().css('font-weight', 'bold')
+
+
+    });
+
+
+    $("li").on("click", function () {
+        $(this).parent().children().first().css("color", "blue");
+        console.log('blue');
+    });
+
 
 </script>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 </body>
 </html>

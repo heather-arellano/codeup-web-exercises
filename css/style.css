@@ -1,49 +1,45 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald');
 
-.fancy header {
-    color: rebeccapurple;
-    text-decoration: underline;
+'use scrict'
+
+/*#top {*/
+    /*text-align: center*/
+/*}*/
+
+/*h1 {*/
+    /*color: rebeccapurple;*/
+/*}*/
+
+/*h2 {*/
+    /*text-decoration: underline;*/
+    /*color: darksalmon;*/
+/*}*/
+
+/*ul {*/
+    /*list-style: lower-latin*/
 }
 
-body {
-    background-color: grey;
-    background-image: url("../images/indie-pattern-background.jpeg");
-    background-repeat: repeat;
-    font-family: 'Oswald', sans-serif;
-}
+/*table, tr, td, th {*/
+    /*border: 3px white solid*/
+/*}*/
 
-#top {
-    text-align: center
-}
-
-h1 {
-    color: rebeccapurple;
-}
-
-h2 {
-    text-decoration: underline;
-    color: darksalmon;
-}
-
-ul {
-    list-style: lower-latin
-}
-
-table, tr, td, th {
-    border: 3px white solid
-}
-
-body:hover {
-    color: bisque
-}
 .flex-container {
-    display: flex;
-    background-color: skyblue;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+
 }
 
-.flex-container > div {
-    background-color: bisque;
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
-}
+.flex-item {
+    flex-grow: 1;
+    background: bisque;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}}
