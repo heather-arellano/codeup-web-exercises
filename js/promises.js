@@ -10,7 +10,7 @@
 //personal token
 var url = 'https://api.github.com/users/misomighty/events/public';
 
-var myData = fetch(url, {headers: {'Authorization': 'token 2bf529fd7d01040e43dd3f7c123a418dfbf4ddb8'}});
+var myData = fetch(url, {headers: {'Authorization': 'token '}});
 console.log(myData);
 
 // var myPromise= new Promise( function(resolve, reject){
