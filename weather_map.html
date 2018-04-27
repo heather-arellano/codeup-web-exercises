@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="UTF-8">
+
+    <title>Weather Map Project</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+
+          crossorigin="anonymous">
+
+    <style>
+
+        body {
+
+            background-color: lightblue;
+
+        }
+
+        h1 {
+
+            margin-left: -15px;
+
+        }
+
+
+
+        #map-canvas {
+
+            width: 100%;
+
+            height: 641px;
+
+            margin-top: 15px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>What's the Weather?</h1>
+
+
+
+
+    <div class="userInput">
+
+        <p>Enter a city</p>
+        <INPUT type="text" id="Longitude" size="25">
+        <label for="Longitude">Enter a City</label>
+        <button class="setWeather">Check location</button>
+    </div>
+
+    <div id="map-canvas"></div>
+
+</div>
+
+<script src="JS/jquery-2.2.4.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEKoMFeSkslCacRvK5a0siRfS7B4qR9fk"></script>
+<script>
+
+    var position={
+        APPID: "abed5940369d592232ca4f5f817ef94e",
+        lat: "29.423017",
+        lon: "-98.48527",
+        units: "imperial",
+        cnt: 3
+    }
+
+    var $request = $.get("http://api.openweathermap.org/data/2.5/forecast", position);
+
+    function creatDivs(response) {
+        response.list.forEach(function (value){
+            $(".container").append(createReport(value));
+        })
+    }
+    $request.done(creatDivs);
+
+    function createReport(objectWeather) {
+        var htmlTime="";
+        htmlTime+="<div class='screen'>";
+        htmlTime+="<h3>"+objectWeather.main.temp_max+"/"+objetoWeather.main.temp_min+"</h3>"+"\n";
+        htmlTime+="<p>Clouds: "+objectWeather.weather[0].description+"</p>"+"\n";
+        htmlTime+="<p>Humidity: "+objectWeather.main.humidity+"</p>"+"\n";
+        htmlTime+="<p>Wind: "+objectWeather.wind.speed+"</p>"+"\n";
+        htmlTime+="<p>Pressure: "+objectWeather.main.pressure+"</p>"+"\n";
+        htmlTime+="</div>";
+        return htmlTime
+    }
+    //creating a map
+    var mapOptions = {
+        zoom: 15,
+        center: {
+            lat:  29.426791,
+            lng: -98.489602
+        },
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+    };
+    var mapCanvas = document.getElementById('map-canvas');
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+
+    var address =" 5723 Cardinal Falls,San Antonio, TX, 78239";
+    function callBack(results, status) {
+        // Check for a successful result
+        if (status == google.maps.GeocoderStatus.OK) {
+
+            map.setCenter(results[0].geometry.location);
+            map.setZoom(10);
+        } else {
+
+            alert("Geocoding was not successful - STATUS: " + status);
+        }
+    }
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ "address": address },callBack );
+    google.maps.event.addListener(map, 'click', function(event) {
+        var coordinates = event.latLng;
+        var lat = coordinates.lat();
+        var lng = coordinates.lng();
+        placeMarker(event.latLng);
+        position.lat=lat;
+        position.lon=lng;
+        var $request = $.get("http://api.openweathermap.org/data/2.5/forecast", position);
+        $(".container").html(" ");
+        $request.done(function (response) {
+            response.list.forEach(function (value){
+                $(".container").append(createReport(value));
+            })
+        });
+    });
+    var marker;
+    function placeMarker(location) {
+        if ( marker ) {
+            marker.setPosition(location);
+        } else {
+            marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                draggable:true
+            });
+        }
+    }
+    $(".setWeather").click(function () {
+        var lat = $("#Latitude").val();
+        var lng = $("#Longitude").val();
+        position.lat = lat;
+        position.lon = lng;
+        var $request = $.get("http://api.openweathermap.org/data/2.5/forecast", position);
+        $(".container").html(" ");
+        $request.done(function (response) {
+            response.list.forEach(function (value) {
+                $(".container").append(createReport(value));
+            })
+        })
+    })
+
+</script>
+
+</body>
+</html>
